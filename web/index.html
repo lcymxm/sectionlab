@@ -22,13 +22,16 @@
     <span class="name">SectionLab</span>
     <span class="cn">截面几何性质</span>
   </div>
-  <div class="unit">
-    <label for="unit">输出单位</label>
-    <select id="unit">
-      <option value="mm">mm</option>
-      <option value="cm">cm</option>
-      <option value="in">in</option>
-    </select>
+  <div class="top-right">
+    <div class="unit">
+      <label for="unit">输出单位</label>
+      <select id="unit">
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="in">in</option>
+      </select>
+    </div>
+    <button class="mini" id="link" title="复制当前截面的分享链接">分享</button>
   </div>
 </header>
 
@@ -52,6 +55,15 @@
         <button class="type" data-type="poly">自定义</button>
       </div>
       <div class="params" id="params"></div>
+      <div class="poly-tools hidden" id="polyTools">
+        <button class="mini" id="addHole">＋ 画孔洞</button>
+        <span class="poly-tip" id="polyTip"></span>
+      </div>
+    </div>
+
+    <div class="card hidden" id="vertsCard">
+      <div class="card-head"><h2>顶点坐标 (mm)</h2></div>
+      <div class="verts" id="verts"></div>
     </div>
 
     <div class="card">
@@ -59,6 +71,7 @@
         <h2>几何性质</h2>
         <div class="acts">
           <button class="mini" id="copy">复制</button>
+          <button class="mini" id="csv">CSV</button>
           <button class="mini" id="png">存图</button>
         </div>
       </div>
@@ -69,7 +82,7 @@
 </main>
 
 <footer>
-  <span>SectionLab v0.1.0</span><span class="sep">·</span>
+  <span>SectionLab v0.2.0</span><span class="sep">·</span>
   <span>全部计算在本地完成，不上传任何数据</span>
 </footer>
 

@@ -7,4 +7,4 @@ import "embed"
 var FS embed.FS
 
 // Version 由构建脚本通过 -ldflags 覆盖，这里是兜底值。
-var Version = "0.1.0"
+var Version = "0.2.0"
