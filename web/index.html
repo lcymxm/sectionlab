@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>SectionLab · 截面几何性质</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1318'/%3E%3Cpath d='M8 16h16M8 10h16M8 22h16' stroke='%23f0b429' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="url(#g)" stroke="#233"/>
+      <path d="M7 10.5h18M7 16h18M7 21.5h18" stroke="#0b1016" stroke-width="2.6" stroke-linecap="round"/>
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#f0a020"/>
+      </linearGradient></defs>
+    </svg>
+    <span class="name">SectionLab</span>
+    <span class="cn">截面几何性质</span>
+  </div>
+  <div class="unit">
+    <label for="unit">输出单位</label>
+    <select id="unit">
+      <option value="mm">mm</option>
+      <option value="cm">cm</option>
+      <option value="in">in</option>
+    </select>
+  </div>
+</header>
+
+<main>
+  <section class="stage">
+    <canvas id="canvas"></canvas>
+    <div class="stage-hint" id="hint">拖动顶点可以改形状</div>
+  </section>
+
+  <aside class="side">
+    <div class="card">
+      <div class="card-head"><h2>截面</h2><button class="mini" id="reset">重置</button></div>
+      <div class="types" id="types">
+        <button class="type on" data-type="rect">矩形</button>
+        <button class="type" data-type="circle">圆</button>
+        <button class="type" data-type="tube">圆管</button>
+        <button class="type" data-type="ibeam">工字钢</button>
+        <button class="type" data-type="channel">槽钢</button>
+        <button class="type" data-type="angle">角钢</button>
+        <button class="type" data-type="tsection">T 型</button>
+        <button class="type" data-type="poly">自定义</button>
+      </div>
+      <div class="params" id="params"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>几何性质</h2>
+        <div class="acts">
+          <button class="mini" id="copy">复制</button>
+          <button class="mini" id="png">存图</button>
+        </div>
+      </div>
+      <table class="res" id="res"></table>
+      <p class="note" id="note"></p>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <span>SectionLab v0.1.0</span><span class="sep">·</span>
+  <span>全部计算在本地完成，不上传任何数据</span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="geometry.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
